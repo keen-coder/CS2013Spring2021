@@ -9,70 +9,15 @@ import java.util.Scanner;
 
 public class FileIOExamples {
 	public static void main(String[] args) {
-		genRandomNum("testOutput.txt", 200);
-		
-		ArrayList<Integer> numbers = readFile("testOutput.txt");
-		
-		System.out.println("size: " + numbers.size());
-		
-		for (Integer i : numbers) {
-			System.out.println(i);
-		}
-		
-		
-		
-		
-	}
-	
-	public static ArrayList<Integer> readFile(String filename) {
-		ArrayList<Integer> myList = new ArrayList<>();
+		//File outFile = ;
 		
 		try {
-			Scanner reader = new Scanner(new File(filename));
+			PrintWriter pw = new PrintWriter(new File("output.txt"));
 			
-			while(reader.hasNextInt()) {
-				int nextInt = reader.nextInt();
-				myList.add(nextInt);
+			for (int i = 1 ; i < 1000 ; i++) {
+				pw.println(i);
 			}
-			
-			reader.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return myList;	
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public static void genRandomNum(String filename, int numValues) {
-		File outFile = new File(filename);
-		Random r = new Random();
-		
-		try {
-			PrintWriter pw = new PrintWriter(outFile);
-			
-			for (int i = 1 ; i <= numValues ; i++) {
-				int nextInt = r.nextInt(10001);
-				pw.println(nextInt);
-			}
-			pw.flush();
 			pw.close();
-
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -86,7 +31,85 @@ public class FileIOExamples {
 		
 		
 		
+		
+//		genRandomNum("testOutput.txt", 200);
+//		
+//		ArrayList<Integer> numbers = readFile("testOutput.txt");
+//		
+//		System.out.println("size: " + numbers.size());
+//		
+//		for (Integer i : numbers) {
+//			System.out.println(i);
+//		}
+		
+		
+		
+		
 	}
+	
+//	public static ArrayList<Integer> readFile(String filename) {
+//		ArrayList<Integer> myList = new ArrayList<>();
+//		
+//		try {
+//			Scanner reader = new Scanner(new File(filename));
+//			
+//			while(reader.hasNextInt()) {
+//				int nextInt = reader.nextInt();
+//				myList.add(nextInt);
+//			}
+//			
+//			reader.close();
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		return myList;	
+//	}
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	public static void genRandomNum(String filename, int numValues) {
+//		File outFile = new File(filename);
+//		Random r = new Random();
+//		
+//		try {
+//			PrintWriter pw = new PrintWriter(outFile);
+//			
+//			for (int i = 1 ; i <= numValues ; i++) {
+//				int nextInt = r.nextInt(10001);
+//				pw.println(nextInt);
+//			}
+//			pw.flush();
+//			pw.close();
+//
+//			
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		
+		
+		
+		
+		
+		
+		
+//	}
 	
 	
 	
